@@ -298,3 +298,10 @@ img {
   @keyframes l1 {
   0% {background-position: right}
 }
+
+canvas {
+  z-index: 0 !important;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+}
