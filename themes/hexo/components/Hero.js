@@ -1,3 +1,11 @@
+import React, { useState, useEffect } from 'react'
+import { siteConfig } from '@/lib/config'
+import { useGlobal } from '@/lib/global'
+import { loadExternalResource } from '@/lib/utils'
+import CONFIG from '../config'
+import NavButtonGroup from './NavButtonGroup'
+
+
 const Hero = props => {
   const [typed, changeType] = useState()
   const { siteInfo } = props
