@@ -4,7 +4,7 @@ import { useGlobal } from '@/lib/global'
 import { loadExternalResource } from '@/lib/utils'
 import CONFIG from '../config'
 import NavButtonGroup from './NavButtonGroup'
-
+import ParticlesBg from './ParticlesBg'
 
 const Hero = props => {
   const [typed, changeType] = useState()
@@ -53,6 +53,7 @@ const Hero = props => {
       id='header'
       style={{ zIndex: 1 }}
       className='w-full h-screen relative bg-black'>
+        <ParticlesBg />
 
       {/* 视频背景层 */}
       <video
