@@ -24,7 +24,7 @@ import dynamic from 'next/dynamic'
 import '@/styles/globals.css'
 import ParticlesBg from '@/components/ParticlesBg'
 
-export default function MyApp({ Component, pageProps }) {
+export default function App({ Component, pageProps }) {
   return (
     <>
       <ParticlesBg />
@@ -84,3 +84,4 @@ const MyApp = ({ Component, pageProps }) => {
     </>
   )
 }
+export default function MyApp
