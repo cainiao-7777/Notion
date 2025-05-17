@@ -57,15 +57,15 @@ const Hero = props => {
 
       {/* 视频背景层 */}
       <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className='absolute top-0 left-0 w-full h-full object-cover z-[-1]'
-      >
-        <source src='/videos/bg.mp4' type='video/mp4' />
-        Your browser does not support the video tag.
-      </video>
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+  poster="/images/bg-fallback.jpg" // 可选
+>
+  <source src="/videos/bg.mp4" type="video/mp4" />
+</video>
 
       {/* 内容层 */}
       <div className='text-white absolute bottom-0 flex flex-col h-full items-center justify-center w-full'>
