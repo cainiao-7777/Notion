@@ -19,7 +19,7 @@ export default function ParticlesBg() {
           shape: {
             type: 'image',
             image: {
-              src: 'https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/heart.png',
+              src: '/public/images/heart.png',
               width: 100,
               height: 100
             }
