@@ -19,7 +19,7 @@ export default function ParticlesBg() {
           shape: {
             type: 'image',
             image: {
-              src: '/public/images/heart.png',
+              src: '/heart.png',
               width: 100,
               height: 100
             }
