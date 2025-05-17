@@ -1,18 +1,3 @@
-// import Image from 'next/image'
-import LazyImage from '@/components/LazyImage'
-import { siteConfig } from '@/lib/config'
-import { useGlobal } from '@/lib/global'
-import { loadExternalResource } from '@/lib/utils'
-import { useEffect, useState } from 'react'
-import CONFIG from '../config'
-import NavButtonGroup from './NavButtonGroup'
-
-let wrapperTop = 0
-
-/**
- * 顶部全屏大图
- * @returns
- */
 const Hero = props => {
   const [typed, changeType] = useState()
   const { siteInfo } = props
@@ -60,7 +45,21 @@ const Hero = props => {
       id='header'
       style={{ zIndex: 1 }}
       className='w-full h-screen relative bg-black'>
-      <div className='text-white absolute bottom-0 flex flex-col h-full items-center justify-center w-full '>
+
+      {/* 视频背景层 */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className='absolute top-0 left-0 w-full h-full object-cover z-[-1]'
+      >
+        <source src='/video/bg.mp4' type='video/mp4' />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* 内容层 */}
+      <div className='text-white absolute bottom-0 flex flex-col h-full items-center justify-center w-full'>
         {/* 站点标题 */}
         <div className='font-black text-4xl md:text-5xl shadow-text'>
           {siteInfo?.title || siteConfig('TITLE')}
@@ -86,13 +85,6 @@ const Hero = props => {
           <i className='opacity-70 animate-bounce fas fa-angle-down' />
         </div>
       </div>
-
-      <LazyImage
-        id='header-cover'
-        alt={siteInfo?.title}
-        src={siteInfo?.pageCover}
-        className={`header-cover w-full h-screen object-cover object-center ${siteConfig('HEXO_HOME_NAV_BACKGROUND_IMG_FIXED', null, CONFIG) ? 'fixed' : ''}`}
-      />
     </header>
   )
 }
