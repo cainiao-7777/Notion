@@ -20,6 +20,19 @@ import SEO from '@/components/SEO'
 import { zhCN } from '@clerk/localizations'
 import dynamic from 'next/dynamic'
 // import { ClerkProvider } from '@clerk/nextjs'
+
+import '@/styles/globals.css'
+import ParticlesBg from '@/components/ParticlesBg'
+
+export default function App({ Component, pageProps }) {
+  return (
+    <>
+      <ParticlesBg />
+      <Component {...pageProps} />
+    </>
+  )
+}
+
 const ClerkProvider = dynamic(() =>
   import('@clerk/nextjs').then(m => m.ClerkProvider)
 )
